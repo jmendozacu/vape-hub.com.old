@@ -41,7 +41,7 @@
 						<?php echo $this->getChildHtml('footer_list') ?>
 						<div class="footer-col-right">
 							<?php echo $this->getChildHtml('left.newsletter') ?>
-							Call us now toll free:  <span class="phone">(800)2345-6789</span>
+							Call us now <span class="phone">(208)901-5888</span>  
 						</div>
 						<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('facebook_fanbox')->toHtml() ?>
 						<div class="clear"></div>
@@ -52,7 +52,7 @@
 					<?php echo $this->getChildHtml('store_switcher') ?>
 					<?php $current_page = Mage::app()->getFrontController()->getRequest()->getRouteName(); 
 						if ($current_page == 'cms'):
-							echo 'More Magento Tobacco Themes at <a rel="nofollow" href="http://www.templatemonster.com/category/tobacco-magento-themes/" target="_blank">TemplateMonster.com</a>';
+//							echo 'More Magento Tobacco Themes at <a rel="nofollow" href="http://www.templatemonster.com/category/tobacco-magento-themes/" target="_blank">TemplateMonster.com</a>';
 						endif;
 					?>
 				</div>
