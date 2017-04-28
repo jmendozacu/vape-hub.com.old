@@ -680,7 +680,7 @@ tr.summary-details-excluded { font-style:italic; }
 }
 .header .logo strong { position:absolute; top:-999em; left:-999em; width:0; height:0; font-size:0; line-height:0; font-size: 0; overflow:hidden; }
 .header h1.logo { margin:0; padding:0; }
-.header .logo img {max-width:100%; height:auto;}
+.header .logo img {max-width:170px; height:auto;}
 
 /* Header ================================================================================ */
 .header-container { padding: 0px; background: url(../images/header-bg.gif) top center;}
