@@ -685,7 +685,7 @@ tr.summary-details-excluded { font-style:italic; }
 /* Header ================================================================================ */
 .header-container { padding: 0px; background: url(../images/header-bg.gif) top center;}
 .header-container .header-tail {  background: url(../images/header-tail.gif) bottom center repeat-x;}
-.header-container .header-shadow {  background: url(../images/top-shadow.png) top center no-repeat;}
+.header-container .header-serwhadow {  background: url(../images/top-shadow.png) top center no-repeat;}
 
 .header-row{ background: url(../images/header-row-tail.png) top repeat-x;}
 .header-row .relative{ position: relative;}
@@ -1103,7 +1103,7 @@ tr.summary-details-excluded { font-style:italic; }
 
 /* Category Page ========================================================================= */
 .category-image { width:100%; overflow:hidden; margin:0 0 10px; text-align:center; }
-.category-image img {max-width: 100%;}
+.category-image img {max-width: 250px; max-height: 200px;}
 .category-description { margin:0 0 10px; }
 .category-products {}
 
