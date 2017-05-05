@@ -1,0 +1,69 @@
+<?php
+$name = 'age_verification';
+$value = true;
+$period = 86400;
+$cookie=Make::getModel('core/cookie')->get($name);
+var_dump("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+var_dump($cookie);
+if (!$cookie):
+?>yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        var = "<?php $cookie ?>";
+        var popup = jQuery('#newsletter-popup');
+        setTimeout (function(){
+            if(!check_cookie) {
+                popup.show();
+              <?php Mage::getModel('core/cookie')->set('popup-shown', 'true', '');?>
+            }
+        },5000);
+        jQuery('.close_popup').click(function(){
+            popup.fadeOut();
+        });
+        jQuery('.close_redirect').click(function() {
+            console.log('uh');
+            window.location.href = 'http://www.google.com';
+        });
+    });
+</script>
+<?php
+else:
+  var_dump("JELLO");
+?>
+
+<?php
+
+endif;
+
+  ?>
+<div id="newsletter-popup" class="container">
+  <div class="sub-container">
+    <!--<div class="close_popup">X</div>-->
+    <div class="content">
+      <div class="newsletter_content">
+        <div class="display_logo"><img src="/skin/frontend/default/theme574/images/vape-hub-black-300w.png"></div>
+        <div class="popup-content-right">
+          <h1>AGE CERTIFICATION</h1>
+          <h2>Are you of legal smoking age?</h2>
+          <div class="yes-no-container">
+            <div class="close_popup age-yes age-c">
+              YES
+              <div class="yes-info yn-info">I am of legal smoking age</div>
+            </div>
+            <div class="close_redirect age-no age-c">
+              NO
+              <div class="no-info yn-info">I am NOT of legal smoking age</div>
+            </div>
+          </div>
+          <div class="c-bottom-info">
+            <h3>The products on this website are intended for adults only.</h3>
+            <span>By entering this website, you certify that you are of legal smoking age in the state in which you reside.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    var newsletterSubscriberFormDetail = new VarienForm('newsletter-registration-form', true);
+</script>
