@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <Codemazes_NewsletterPopUp>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Codemazes_NewsletterPopUp>
+    </modules>
+</config>

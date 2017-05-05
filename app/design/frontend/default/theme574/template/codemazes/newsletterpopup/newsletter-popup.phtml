@@ -1,0 +1,41 @@
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        var check_cookie = "<?php echo Mage::getModel('core/cookie')->get('popup-shown'); ?>";
+        var popup = jQuery('#newsletter-popup');
+        setTimeout (function(){
+            if(!check_cookie) {
+                popup.show();
+              <?php Mage::getModel('core/cookie')->set('popup-shown', 'true', '');?>
+            }
+        },5000);
+        jQuery('.close_popup').click(function(){
+            popup.fadeOut();
+        });
+    });
+</script>
+<div id="newsletter-popup" class="container">
+  <span class="close_popup">X</span>
+  <div class="sub-container">
+    <div class="content">
+      <div class="newsletter_content" style="float:left;">
+        <h1>HELLO THERE!</h1>
+        <p>SIGN UP TO GET UPDATE ABOUT OUR UPCOMING EVENTS AND SPECIAL DISCOUNT OFFERS</p>
+      </div>
+      <div class="register-form" style="float:right;">
+        <form id="newsletter-registration-form" action="<?php echo $this->getUrl('newsletter/subscriber/new/') ?>" method="post" id="newsletter-validate-detail">
+          <div class="form-fields-middle">
+            <div class="input-wrapper">
+              <input name="email" id="cm_email" onfocus="if(this.value=='Enter Your Email') this.value=''" onblur="if(this.value=='') this.value='Enter Your Email'" class="validate-email required-entry field-left" type="text" value="Enter Your Email" />
+            </div>
+          </div>
+          <div class="btn-sign-up-now">
+            <input type="submit" class="button" value="Sign Up" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+    var newsletterSubscriberFormDetail = new VarienForm('newsletter-registration-form', true);
+</script>
