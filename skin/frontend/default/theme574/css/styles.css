@@ -1,4 +1,5 @@
 /**
+
  * Magento
  *
  * NOTICE OF LICENSE
@@ -2954,3 +2955,12 @@ span.opened:before {content: "\f068";}
 .input-box:after,
 .block-subscribe .block-content:after { display:block; content:"."; clear:both; font-size:0; line-height:0; height:0; overflow:hidden; }
 /* ======================================================================================= */
+#dt_method_authorizenet {
+        display: block;
+}
+#dt_method_authorizenet label {
+        display: grid;
+}
+#dt_method_authorizenety img {
+        max-width: 200px;
+}

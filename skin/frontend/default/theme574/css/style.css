@@ -251,3 +251,12 @@ A.awblog_current_comment {
     text-decoration: none !important;
     font-weight: bold !important;
 }
+#dt_method_authorizenet {
+	display: block;
+}
+#dt_method_authorizenet label {
+	display: grid;
+}
+#dt_method_authorizenety img {
+	max-width: 200px;
+}
