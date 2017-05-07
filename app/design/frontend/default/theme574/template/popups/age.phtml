@@ -1,41 +1,24 @@
 <?php
 $name = 'age_verification';
-$value = true;
+$value = 'true';
 $period = 86400;
-$cookie=Make::getModel('core/cookie')->get($name);
-var_dump("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-var_dump($cookie);
-if (!$cookie):
-?>yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy
+$cookie = Mage::getModel('core/cookie')->get($name);
+if (($cookie == 0) || (!$cookie)) {
+?>
 <script type="text/javascript">
     jQuery(document).ready(function() {
-        var = "<?php $cookie ?>";
         var popup = jQuery('#newsletter-popup');
-        setTimeout (function(){
-            if(!check_cookie) {
-                popup.show();
-              <?php Mage::getModel('core/cookie')->set('popup-shown', 'true', '');?>
-            }
-        },5000);
+
         jQuery('.close_popup').click(function(){
+          <?php Mage::getModel('core/cookie')->set($name, 1, $period);?>
             popup.fadeOut();
         });
         jQuery('.close_redirect').click(function() {
-            console.log('uh');
+            <?php Mage::getModel('core/cookie')->set($name, 0, $period);?>
             window.location.href = 'http://www.google.com';
         });
     });
 </script>
-<?php
-else:
-  var_dump("JELLO");
-?>
-
-<?php
-
-endif;
-
-  ?>
 <div id="newsletter-popup" class="container">
   <div class="sub-container">
     <!--<div class="close_popup">X</div>-->
@@ -64,6 +47,8 @@ endif;
     </div>
   </div>
 </div>
-<script type="text/javascript">
-    var newsletterSubscriberFormDetail = new VarienForm('newsletter-registration-form', true);
-</script>
+<?php } else {
+var_dump("Ryan");
+  header("Location: http://www.google.com");
+
+} ?>
