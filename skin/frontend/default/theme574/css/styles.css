@@ -8699,3 +8699,16 @@ span.opened:before {
 #newsletter-popup.container .yes-no-container {
     margin-top: 20px;
 }
+.age-box input.birthdate-input {
+    color: #B4B4B4;
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+    font-size: 23px;
+}
+.age-button button {
+    margin-top: 15px;
+}
+.age-button span {
+    font-size: 17px;
+}
