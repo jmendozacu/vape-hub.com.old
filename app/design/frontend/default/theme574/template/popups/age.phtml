@@ -1,9 +1,7 @@
 <?php
 $name = 'age_verification';
 $cookie = Mage::getModel('core/cookie')->get($name);
-if (($cookie == 'under') || (!$cookie)) {   
-?>
-
+if (($cookie == 'under') || (!$cookie)) {?>
 <script type="text/javascript">
     jQuery(document).ready(function() {
 
@@ -78,6 +76,7 @@ if (($cookie == 'under') || (!$cookie)) {
                   <div class="age-box">
                       <label>Birthdate</label>
                       <input name="birthdate" class="birthdate-input input-text form-control" placeholder="mm/dd/yyyy" value="">
+                      <span style="color:red;">Must be in 06/04/1984 format</span>
                   </div>
                   <div class="age-button">
                       <button type="button" title="Verify Age" class="button btn-continue"><span><span>I'm Over 18</span></span></button>

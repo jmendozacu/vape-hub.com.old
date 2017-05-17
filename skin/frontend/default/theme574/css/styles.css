@@ -8661,6 +8661,7 @@ span.opened:before {
     background: #fff;
     padding: 20px;
 }
+
 #newsletter-popup.container .display_logo {
     float:left;
     width: 25%;
@@ -8711,4 +8712,28 @@ span.opened:before {
 }
 .age-button span {
     font-size: 17px;
+}
+
+@media only screen and (max-width: 767px) {
+    #newsletter-popup.container .sub-container {
+        width: 83%;
+    }
+    #newsletter-popup.container h1 {
+        font-size: 25px;
+    }
+    #newsletter-popup.container img {
+        max-height: 140px;
+    }
+
+}
+@media only screen and (max-width: 500px) {
+    #newsletter-popup.container h1 {
+        font-size: 21px;
+    }
+    #newsletter-popup.container h2 {
+        font-size: 14px;
+    }
+    .age-box input.birthdate-input {
+        width: 77%;
+    }
 }
