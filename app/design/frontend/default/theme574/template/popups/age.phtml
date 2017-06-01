@@ -4,61 +4,17 @@ $cookie = Mage::getModel('core/cookie')->get($name);
 if (($cookie == 'under') || (!$cookie)) {?>
 <script type="text/javascript">
     jQuery(document).ready(function() {
-
-        jQuery('.birthdate-input').on('keypress', function (e) {
-            var textSoFar = jQuery(this).val();
-            if (e.keyCode != 191) {
-                if (e.keyCode != 8) {
-                    if (textSoFar.length == 2 || textSoFar.length == 5) {
-                        jQuery(this).val(textSoFar + "/");
-                    }
-                    //to handle copy & paste of 8 digit
-                    else if (e.keyCode == 86 && textSoFar.length == 8) {
-                        jQuery(this).val(textSoFar.substr(0, 2) + "/" + textSoFar.substr(2, 2) + "/" + textSoFar.substr(4, 4));
-                    }
-                }
-                else {
-                    if (textSoFar.length == 5) {
-                        jQuery(this).val(textSoFar.substring(0, 4));
-                    }
-                    else if (textSoFar.length == 2) {
-                        jQuery(this).val(textSoFar.substring(0, 1));
-                    }
-                }
-            }
-            else {
-                jQuery(this).val(textSoFar.substring(0, textSoFar.length - 1));
-            }
-        });
-
+        
         var popup = jQuery('#newsletter-popup');
 
-        jQuery('.age-button button').on('click', function() {
-
-           var theirAge = jQuery('input.birthdate-input').val();
-           theirAge = theirAge.split('/');
-
-           var month = theirAge[0],
-               day = theirAge[1],
-               year = theirAge[2],
-               age = 18,
-               currDate = new Date(),
-               setDate = new Date(),
-               myDate = new Date();
-           
-           myDate.setFullYear(year, month-1, day);
-           setDate.setFullYear(myDate.getFullYear() + age,month-1, day);
-
-           if((currDate - setDate) > 0) {
-               console.log('You are over 18');
-               Mage.Cookies.set('age_verification', 'over');
-               popup.fadeOut();
-           } else {
-               console.log('You are under 18');
-               Mage.Cookies.set('age_verification', 'under');
-               window.location.href = 'http://www.google.com';
-           }
+        jQuery(".btn-yes").on('click', function(e) {
+            Mage.Cookies.set('age_verification', 'over');
+            popup.fadeOut();
         });
+        jQuery('.btn-no').on('click', function(e) {
+            Mage.Cookies.set('age_verification', 'under');
+            window.location.href = 'http://www.google.com';
+        })
     });
 </script>
 <div id="newsletter-popup" class="container">
@@ -72,16 +28,10 @@ if (($cookie == 'under') || (!$cookie)) {?>
           <h2>Are you of legal smoking age?</h2>
           <div class="yes-no-container">
               <form action="#" name="age">
-
                   <div class="age-box">
-                      <label>Birthdate</label>
-                      <input name="birthdate" class="birthdate-input input-text form-control" placeholder="mm/dd/yyyy" value="">
-                      <span style="color:red;">Must be in 06/04/1984 format</span>
+                      <button type="button" title="Yes Over 18" class="button btn-yes"><span>YES</span></button>
+                      <button type="button" title="No Under 18" class="button btn-no"><span>NO</span></button>
                   </div>
-                  <div class="age-button">
-                      <button type="button" title="Verify Age" class="button btn-continue"><span><span>I'm Over 18</span></span></button>
-                  </div>
-
               </form>
           <div class="c-bottom-info">
             <h3>The products on this website are intended for adults only.</h3>

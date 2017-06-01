@@ -8713,6 +8713,15 @@ span.opened:before {
 .age-button span {
     font-size: 17px;
 }
+.age-box button.button {
+    padding: 20px;
+}
+.age-box button.button span {
+    height: inherit;
+    padding: 20px;
+    font-size: 35px;
+    min-width: 125px;
+}
 
 @media only screen and (max-width: 767px) {
     #newsletter-popup.container .sub-container {
