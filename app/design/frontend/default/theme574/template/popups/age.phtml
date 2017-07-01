@@ -4,7 +4,7 @@ $cookie = Mage::getModel('core/cookie')->get($name);
 if (($cookie == 'under') || (!$cookie)) {?>
 <script type="text/javascript">
     jQuery(document).ready(function() {
-
+        
         var popup = jQuery('#newsletter-popup');
 
         jQuery(".btn-yes").on('click', function(e) {
